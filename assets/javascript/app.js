@@ -16,7 +16,31 @@
 
 var characterArray = ["black ranger", "pink ranger", "yellow ranger", "green ranger", "red ranger", "blue ranger", "rita repulsa", "zordon", "alpha 5", "bulk and skull"];
 
-function displayCharacters () {
-    
+var queryURL = "https://api.giphy.com/v1/gifs/search?&q=" + characterArray + 
+"&rating=PG&lang=en&api_key=bLGuPuEQa3pGIFR5h8MvxFwOFQg9ScJc&limit=10";
+
+// function for displaying movie data
+function renderButtons() {
+    $("#powerRangers-view").empty();
+
+    for(var i=0; i < characterArray.length; i++) {
+      $("#powerRangers-view").append("<button>" + characterArray[i] + "</button>")
+    }
 }
+
+$("#add-ranger").on("click", function(event){
+    event.preventDefault();
+
+    var newRanger = $("#ranger-input").val();
+    characterArray.push(newRanger);
+
+    renderButtons();
+});
+
+renderButtons();
+
+
+
+
+
 

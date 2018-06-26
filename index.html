@@ -10,14 +10,16 @@
 </head>
 <body>
 
-    <div id="powerRangerButtons">
+    <div id="powerRangers-view">
 
     </div>
     <div class="container">
-            <form>
-                    Add your favorite color ranger (i.e. "gold ranger"): <br>
-                    <input type="text" ><br><br>
-                    <input type="submit" value="Submit">
+            <form id="ranger-form">
+                    <label for="ranger-input">Add your favorite color ranger or TV superhero (i.e. "gold ranger")</label>
+                    <input type="text" id="ranger-input"><br>
+
+                    <!-- Button triggers new ranger or TV super hero -->
+                    <input id="add-ranger" type="submit" value="It's morphin time!">
                   </form>
     </div>
 
@@ -25,6 +27,7 @@
 
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="assets/javascript/app.js"></script>
 </body>

@@ -14,7 +14,7 @@
 
 //create global variables
 
-var characterArray = ["black ranger", "pink ranger", "yellow ranger", "green ranger", "red ranger", "blue ranger", "rita repulsa", "zordon", "alpha 5", "bulk and skull"];
+var characterArray = ["black power ranger", "pink power ranger", "yellow power ranger", "green power ranger", "red power ranger", "blue power ranger", "rita repulsa", "zordon", "alpha 5", "bulk and skull"];
 
 function displayRangerInfo() {
 
@@ -45,12 +45,34 @@ $.ajax({
     rangerDiv.append(pOne);
 
     // retrieving the URL for the image
-    var imgURL = results[i].images.fixed_height_still.url;
+    // var imgURL = results[i].images.fixed_height_still.url;
 
-    var image = $("<img>").attr("src", imgURL);
+    // var image = $("<img>").attr("src", imgURL);
+
+    var image = $("<img>");
+    image.attr({
+        "src": results[i].images.fixed_height_still.url,
+        "data-state": "still",
+        "data-still": results[i].images.fixed_height_still.url,
+        "data-animate": results[i].images.fixed_height.url,
+    });
+
+    // create click function for image
+    image.on("click", function() {
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+    })
 
     // appending the image
-    rangerDiv.append(image);
+    rangerDiv.prepend(image);
+
+    // rangerDiv.append(image);
 
     // putting the entire ranger image aboe the previouse gifs
     $("#powerRangers-view").prepend(rangerDiv);

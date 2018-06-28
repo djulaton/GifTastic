@@ -14,7 +14,7 @@
 
 //create global variables
 
-var characterArray = ["black power ranger", "pink power ranger", "yellow power ranger", "green power ranger", "red power ranger", "blue power ranger", "rita repulsa", "zordon", "alpha 5", "bulk and skull"];
+var characterArray = ["black power ranger", "pink power ranger", "yellow power ranger", "green power ranger", "red power ranger", "blue power ranger", "rita repulsa", "zordon from power rangers", "alpha 5", "bulk and skull"];
 
 function displayRangerInfo() {
 
@@ -103,7 +103,7 @@ function renderButtons() {
 $("#add-ranger").on("click", function(event){
     event.preventDefault();
 
-    var newRanger = $("#ranger-input").val();
+    var newRanger = $("#ranger-input").val().trim();
     characterArray.push(newRanger);
 
     renderButtons();

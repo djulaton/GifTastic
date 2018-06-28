@@ -1,0 +1,41 @@
+body {
+    background-image: url("../images/power-rangers-bg.jpg");
+    background-color: black;
+    background-repeat: no-repeat;
+}
+#form {
+    background-color: rgb(192, 189, 189);
+    width: 50%;
+    float: right;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: red;
+    border: none;
+    margin: 5px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: gold;
+    font-weight: bold; 
+    color: black;
+}
+
+#add-ranger:hover {
+    background-color: gold;
+    font-weight: bold; 
+}
+
+#powerRangers-view {
+    float: right;
+}
+
+p {
+    color: white;
+    font-weight: bold;
+}

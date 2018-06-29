@@ -6,9 +6,11 @@ body {
 #form {
     background-color: rgb(192, 189, 189);
     width: 50%;
+    height: 50%;
     float: right;
     padding: 10px;
     margin-top: 5px;
+    margin-right: 10px;
 }
 
 button {
@@ -32,10 +34,28 @@ button:hover {
 }
 
 #powerRangers-view {
-    float: right;
+    margin-top: 50px;
+    display: inline-block;
+    width: 100%
 }
 
 p {
     color: white;
     font-weight: bold;
+}
+
+img, p {
+    float: left;
+    border:3px double #999;
+    margin-bottom: 20px;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;  /*       Opera/IE 8+ */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
